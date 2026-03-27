@@ -10,7 +10,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useKanban } from '@/lib/KanbanContext';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import VoiceInput from './VoiceInput';
 import StandupPanel from './StandupPanel';
 import FocusMode from './FocusMode';
@@ -298,7 +298,9 @@ export default function DashboardLayout() {
         <MessageSquare className="h-6 w-6 text-white" />
       </motion.button>
       
-      {showChatBot && <ChatBot onClose={() => setShowChatBot(false)} />}
+      <AnimatePresence>
+        {showChatBot && <ChatBot onClose={() => setShowChatBot(false)} />}
+      </AnimatePresence>
     </div>
   );
 }

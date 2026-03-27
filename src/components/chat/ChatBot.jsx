@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
@@ -79,13 +79,13 @@ export default function ChatBot({ onClose }) {
   };
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.95, y: 20 }}
-        className="fixed bottom-24 right-6 z-50 w-96"
-      >
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.95, y: 20 }}
+      transition={{ duration: 0.2 }}
+      className="fixed bottom-24 right-6 z-50 w-96"
+    >
         <Card className="bg-[#1a1f2e]/95 backdrop-blur-xl border-white/10 shadow-2xl shadow-purple-500/20">
           <div className="p-4 border-b border-white/10 flex items-center justify-between">
             <div className="flex items-center gap-2">
@@ -173,6 +173,5 @@ export default function ChatBot({ onClose }) {
           </div>
         </Card>
       </motion.div>
-    </AnimatePresence>
   );
 }
