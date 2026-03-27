@@ -38,6 +38,7 @@ export default function DashboardLayout() {
   const sidebarLinks = [
     { to: '/dashboard', icon: LayoutDashboard, label: 'Board' },
     { to: '/dashboard/analytics', icon: BarChart3, label: 'Analytics' },
+    { to: '/dashboard/admin', icon: Users, label: 'Admin' },
     { to: '/dashboard/settings', icon: Settings, label: 'Settings' },
   ];
   
